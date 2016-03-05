@@ -18,6 +18,5 @@
     user: "{{ githubwebhooks_user }}"
     special_time: daily
     job: "node {{ githubwebhooks_path }}/github-webhooks.js {{ item }}"
-  with_items:
-    - "--github-repo-filter=ansible-"
-    - "--github-repo-filter=playbook-"
+  with_items: "{{ githubwebhooks_cronjobs }}"
+  when: githubwebhooks_cronjobs is iterable

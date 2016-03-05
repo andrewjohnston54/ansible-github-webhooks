@@ -8,3 +8,5 @@ githubwebhooks_user: www-data
 githubwebhooks_install_directory: /data/www/
 githubwebhooks_install_name: github-webhooks
 githubwebhooks_path: "{{ githubwebhooks_install_directory }}{{ githubwebhooks_install_name }}"
+
+githubwebhooks_cronjobs: false
