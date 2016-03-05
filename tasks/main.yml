@@ -5,3 +5,9 @@
     dest: "/data/www/github-webhooks"
     update: yes
     force: yes
+
+- name: copy configuration
+  template:
+    src: templates/config.js
+    dest: /data/www/github-webhooks/config.js
+    mode: 0644
