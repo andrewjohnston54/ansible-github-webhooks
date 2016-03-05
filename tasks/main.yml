@@ -14,7 +14,7 @@
 
 - name: set cron jobs
   cron:
-    name: "cron for {{ githubwebhooks_cron }}"
+    name: "cron for {{ item }}"
     special_time: daily
     job: "node /data/www/github-webhooks/github-webhooks.js {{ item }}"
   with_items:
