@@ -1,0 +1,7 @@
+---
+- name: clone Github webhooks | git
+  git:
+    repo: "https://github.com/stevenharradine/github-webhooks.git"
+    dest: "/data/www/github-webhooks"
+    update: yes
+    force: yes
