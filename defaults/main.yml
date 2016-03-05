@@ -1,0 +1,6 @@
+---
+githubwebhooks_github_token: ""
+githubwebhooks_github_organization: telusdigital
+githubwebhooks_web_hook: ""
+githubwebhooks_github_events:
+  - "*"
