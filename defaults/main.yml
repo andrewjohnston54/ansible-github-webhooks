@@ -4,3 +4,7 @@ githubwebhooks_github_organization: telusdigital
 githubwebhooks_web_hook: ""
 githubwebhooks_github_events:
   - "*"
+githubwebhooks_user: www-data
+githubwebhooks_install_directory: /data/www/
+githubwebhooks_install_name: github-webhooks
+githubwebhooks_path: "{{ githubwebhooks_install_directory }}{{ githubwebhooks_install_name }}"

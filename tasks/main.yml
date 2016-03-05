@@ -2,22 +2,22 @@
 - name: clone Github webhooks | git
   git:
     repo: "https://github.com/stevenharradine/github-webhooks.git"
-    dest: "/data/www/github-webhooks"
+    dest: "{{ githubwebhooks_path }}"
     update: yes
     force: yes
 
 - name: copy configuration
   template:
     src: templates/config.js
-    dest: /data/www/github-webhooks/config.js
+    dest: "{{ githubwebhooks_path }}/config.js"
     mode: 0644
 
 - name: set cron jobs
   cron:
     name: "cron for {{ item }}"
-    user: "www-data"
+    user: "{{ githubwebhooks_user }}"
     special_time: daily
-    job: "node /data/www/github-webhooks/github-webhooks.js {{ item }}"
+    job: "node {{ githubwebhooks_path }}/github-webhooks.js {{ item }}"
   with_items:
     - "--github-repo-filter=ansible-"
     - "--github-repo-filter=playbook-"
