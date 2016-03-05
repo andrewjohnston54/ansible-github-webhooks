@@ -11,3 +11,12 @@
     src: templates/config.js
     dest: /data/www/github-webhooks/config.js
     mode: 0644
+
+- name: set cron jobs
+  cron:
+    name: "cron for {{ githubwebhooks_cron }}"
+    special_time: daily
+    job: "node /data/www/github-webhooks/github-webhooks.js {{ item }}"
+  with_items:
+    - "--github-repo-filter=ansible-"
+    - "--github-repo-filter=playbook-"
