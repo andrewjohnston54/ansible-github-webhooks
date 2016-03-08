@@ -1,7 +1,7 @@
 ---
 - name: clone Github webhooks | git
   git:
-    repo: "https://github.com/stevenharradine/github-webhooks.git"
+    repo: "https://github.com/telusdigital/github-webhooks.git"
     dest: "{{ githubwebhooks_path }}"
     update: yes
     force: yes
